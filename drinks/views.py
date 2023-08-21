@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+
 @api_view(['GET', 'POST'])
 def drink_list(request, format=None):
 
@@ -18,6 +19,7 @@ def drink_list(request, format=None):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def drink_detail(request, id, format=None):
